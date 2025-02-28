@@ -1,0 +1,536 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    display: inline-block;
+}
+
+
+/* Search Section */
+#searchSection {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Movie List */
+#movieList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.movie {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Section */
+#cart {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#cart h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+#cartItems {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+#cartItems li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#cartButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#cartButtons button {
+    flex: 1;
+    margin: 5px;
+}
+
+/* Toggle Cart Button */
+#toggleCartBtn {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    padding: 15px 25px; 
+    border-radius: 50%;  
+    background-color: #f0f0f0; 
+    transition: transform 0.3s ease;
+}
+
+#cart.collapsed {
+    display: none;
+}
+
+/* Random Movie Recommendation Section */
+#randomMovieRecommendation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#randomMovieRecommendation img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#randomMovieRecommendation h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 15px;
+}
+
+#randomMovieRecommendation p {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+#randomMovieRecommendation button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+#randomMovieRecommendation button:hover {
+    background-color: #0056b3;
+}
+
+/* Recommended Movies Bar */
+#recommendationBar {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#recommendationBar h2 {
+    text-align: center !important;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    color: #141414 !important;
+    text-transform: uppercase !important;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5) !important;
+    border-bottom: 3px solid #353434 !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 15px !important;
+}
+
+#recommendationList {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+#recommendationList::-webkit-scrollbar {
+    height: 8px;
+}
+
+#recommendationList::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+#recommendationList .movie {
+    flex: 0 0 auto;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#recommendationList .movie:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+#recommendationList img {
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+#recommendationList h3 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+    margin-top: 10px;
+}
+
+#recommendationList p {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.popup h2 {
+    margin-bottom: 20px;
+}
+
+.popup button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #cc0000;
+}
+
+#toggleCartBtn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    z-index: 20;
+    transition: transform 0.3s ease;
+}
+
+#cart.collapsed {
+    display: none;
+}
+
+#cart {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#clearCart {
+    background-color: #ff0000; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+#clearCart:hover {
+    background-color: #cc0000; 
+}
+
+#checkout {
+    background-color: #32cd32; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#checkout:hover {
+    background-color: #228b22; 
+}
+
+
+
+/* ################################################################################################################## */
+
+
+
+
+
+/* เพิ่ม Media Queries สำหรับอุปกรณ์ต่าง ๆ */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #app {
+        margin: 0;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    /* Search Section */
+    #searchSection {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Movie List */
+    #movieList {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .movie {
+        padding: 15px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .movie img {
+        width: 100%;  /* ลดขนาดรูป */
+        height: auto;
+        border-radius: 8px;
+    }
+
+    #recommendationBar {
+        padding: 15px;
+    }
+
+    #recommendationList {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Cart Section */
+    #cart {
+        position: fixed;
+        right: 20px;
+        top: 100px;
+        width: 250px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px;  /* ลด padding */
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #cart h2 {
+        font-size: 1.4rem; /* ลดขนาดตัวอักษร */
+    }
+
+    /* Cart Buttons */
+    #cartButtons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #clearCart, #checkout {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Random Movie Recommendation */
+    #randomMovieRecommendation {
+        padding: 15px;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    #randomMovieRecommendation img {
+        width: 100%;  /* ลดขนาดรูป */
+        height: auto;
+        border-radius: 8px;
+    }
+
+    #randomMovieRecommendation button {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    #recommendationList {
+        flex-direction: row;
+    }
+
+    #recommendationList .movie {
+        width: 220px;
+    }
+
+    #searchSection {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    input[type="text"] {
+        width: 60%;
+    }
+
+    button {
+        width: auto;
+    }
+
+    #cart {
+        position: fixed;
+        right: 20px;
+        top: 100px;
+        width: 250px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+
+
+/* background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #d4d4d4, #535357);
+}

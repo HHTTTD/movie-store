@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Store App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Movie Store</h1>
+        
+        <!-- ส่วนค้นหาภาพยนตร์ -->
+        <div id="searchSection">
+            <input type="text" id="searchInput" placeholder="ค้นหาภาพยนตร์...">
+            <button id="searchButton">ค้นหา</button>
+            <button id="randomMovieButton">สุ่มภาพยนตร์</button>
+        </div>
+
+        <!-- รายการภาพยนตร์ -->
+        <div id="movieList"></div>
+
+        <!-- ส่วนแนะนำภาพยนตร์แบบสุ่ม -->
+        <div id="randomMovieRecommendation" style="display: none;">
+            <img id="randomMovieImage" src="" alt="ภาพยนตร์สุ่ม">
+            <h2 id="randomMovieTitle"></h2>
+            <p id="randomMovieOverview"></p>
+            <p id="randomMovieReleaseDate"></p>
+            <button onclick="getRandomMovie()">สุ่มใหม่</button>
+        </div>
+
+        <!-- ส่วนแนะนำภาพยนตร์ -->
+        <div id="recommendationBar" class="recommendation-bar">
+            <h2>Recommended Movies</h2>
+            <div id="recommendationList"></div>
+        </div>
+
+        <!-- ตะกร้าสินค้า -->
+        <div id="cart" class="collapsed"> 
+            <h2>ตะกร้าสินค้า</h2>
+            <ul id="cartItems"></ul>
+            <div id="cartButtons">
+                <button id="clearCart">ล้างตะกร้า</button>
+                <button id="checkout">ชำระเงิน</button>
+            </div>
+        </div>
+
+        <button id="toggleCartBtn">
+            🛒 
+        </button> 
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
