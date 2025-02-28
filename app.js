@@ -1,4 +1,4 @@
-const apiKey = '6a18e1223e80714a4de8b1ddc79fb525';
+const apiKey = '6a18e1223e80714a4de8b1ddc79fb525';  //ที่ไม่ใส่เป็น .env เพราะไม่อยากติดตั้งnode_modulesนะครับ
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const randomMovieButton = document.getElementById('randomMovieButton');
