@@ -50,4 +50,6 @@ git clone https://github.com/HHTTTD/movie-store.git
 สามารถทดลองใช้งานแอปพลิเคชันได้ที่นี่:  
 🔗 [Movie Store App - Live Demo](https://movie-store-5rdl.onrender.com)
 
+![Movie Store Preview](https://cdn.discordapp.com/attachments/1127802967274303498/1345297719903780927/MovieStoreApp.PNG?ex=67c409a2&is=67c2b822&hm=1beaeaf54dd4f2f1936d5d5157dfcf60c589ce086cb2e73d731b2e4012dba201&)
+
 
